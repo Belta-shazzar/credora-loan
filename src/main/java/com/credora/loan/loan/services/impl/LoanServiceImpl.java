@@ -21,17 +21,17 @@ public class LoanServiceImpl implements LoanService {
   private final KafkaProducerService producerService;
 
   @Override
-  public StringResponseDto loanApplication(LoanApplicationDto request, UUID userId) {
+  public StringResponseDto loanApply(LoanApplicationDto request, UUID userId) {
     Object user = this.userClient.getUserDetailById(userId);
     System.out.println("The loan application is WIP");
     System.out.println("The user is " + user);
 
-    producerService.sendOnboardingConfirmationNotification(new LoanApplicationNotificationRequest(
-            UUID.randomUUID(),
-            userId,
-            LoanStatus.PENDING,
-            "The loan application is successful and would be reviewed shortly"
-    ));
+//    producerService.sendOnboardingConfirmationNotification(new LoanApplicationNotificationRequest(
+//            UUID.randomUUID(),
+//            userId,
+//            LoanStatus.PENDING,
+//            "The loan application is successful and would be reviewed shortly"
+//    ));
     return new StringResponseDto("The loan application is successful and would be reviewed shortly");
   }
 }

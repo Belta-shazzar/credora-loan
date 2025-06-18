@@ -20,7 +20,7 @@ public class LoanController {
   @PostMapping("apply")
   @ResponseBody
   public ResponseEntity<StringResponseDto> loanApplication(@Valid @RequestBody LoanApplicationDto request) {
-      StringResponseDto responseDto = this.loanService.loanApplication(request, UUID.fromString("4cf2aaca-d7f7-4e23-888f-7149cedc92ed"));
+      StringResponseDto responseDto = this.loanService.loanApply(request, UUID.fromString("e8692709-7243-48c5-be32-09a2999db3ad"));
       return ResponseEntity
                .status(HttpStatus.OK)
                .body(responseDto);

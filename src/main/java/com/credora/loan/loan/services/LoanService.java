@@ -6,5 +6,5 @@ import com.credora.loan.loan.dto.LoanApplicationDto;
 import java.util.UUID;
 
 public interface LoanService {
-   StringResponseDto loanApplication(LoanApplicationDto request, UUID userId);
+   StringResponseDto loanApply(LoanApplicationDto request, UUID userId);
 }
